@@ -4,10 +4,9 @@ import xlrd
 import json
 
 # download file from the source
-'''url = 'https://www.iso20022.org/sites/default/files/ISO10383_MIC/ISO10383_MIC.xls'
+url = 'https://www.iso20022.org/sites/default/files/ISO10383_MIC/ISO10383_MIC.xls'
 r = requests.get(url, allow_redirects=True)
 open('ISO10383_MIC.xls', 'wb').write(r.content)
-'''
 
 # open workbook
 workbook = xlrd.open_workbook('ISO10383_MIC.xls')
@@ -23,7 +22,6 @@ head = list()
 
 # frame the heading into a list
 for a in heading:
-    print(a)
     head.append(str(a).lstrip("text:'").rstrip("'"))
 
 # initialize counter for looping rows
