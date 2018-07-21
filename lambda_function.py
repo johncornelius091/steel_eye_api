@@ -74,11 +74,12 @@ def lambda_handler(event, context):
     
     upload = 'https://s3.ap-south-1.amazonaws.com/' + BUCKET_NAME + '/' + new_file_name
     
-    # TODO implement
+    # frame output for end user, status and the URL of .json file
     out = dict()
     out['status'] = "success"
     out['file_name'] = upload
     
+    # frame response for API Gateway. API Gateway can only recognise and sends successful output only if its in below prescribed format
     data = dict()
     data['statusCode'] = 200
     data['isBase64Encoded'] = False
